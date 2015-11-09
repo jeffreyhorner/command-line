@@ -1,0 +1,2 @@
+localvimrc.vba: call delete('/home/hornerj/.vim/plugin/localvimrc.vim')|call delete('/home/hornerj/.vim/doc/localvimrc.txt')
+markdown-1.2.2.vba: call delete('/home/jeffrey/.vim/ftdetect/markdown.vim')|call delete('/home/jeffrey/.vim/snippets/markdown.snippets')|call delete('/home/jeffrey/.vim/syntax/markdown.vim')

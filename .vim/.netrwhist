@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/jeffrey/Projects/CMS/MHT_Chronic_Care_Data'
+let g:netrw_dirhist_2='/home/jeffrey/Projects/LABA'
+let g:netrw_dirhist_3='/home/jeffrey/Projects/LanderAnalytics/HamiltonLane/Project1/HLProspector/global_scripts'
+let g:netrw_dirhist_4='/home/jeffrey/Projects/LanderAnalytics/HamiltonLane/Project1/HLProspector/menu'
+let g:netrw_dirhist_5='/home/jeffrey/Projects/LanderAnalytics/HamiltonLane/Project1/HLProspector/menu/05_Custom_Market_Analytics'
+let g:netrw_dirhist_6='/home/jeffrey/Projects/RUNNING'
+let g:netrw_dirhist_7='/home/jeffrey/Projects/ThreatQuotient'
+let g:netrw_dirhist_8='/home/jeffrey/Projects/RUNNING'
