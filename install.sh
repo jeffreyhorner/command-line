@@ -1,4 +1,5 @@
 #!/bin/bash
+cp .gitconfig ~/.
 cp .inputrc ~/.
 cp .vimrc ~/.
 cp .Rprofile ~/.
