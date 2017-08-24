@@ -4,54 +4,51 @@
 " global options
 """"""""""""""""""""""
 
-set ruler
+set nospell " messes with word highlighting
+set ruler " Lines,chars
 map ; :
-set vb
-set tabstop=2
-set shiftwidth=2
-"set textwidth=4
-set expandtab
-set noshowmatch
-set showmode
-"set ignorecase
-set dir=/tmp
-set hh=0
-set shm=atoOsTWAI
-set noshowcmd
+set vb  " Visual bell
+set tabstop=2       " tabbing over 2 chars
+set shiftwidth=2    " ? 
+set expandtab       " expand a tab to the number of chars
+set noshowmatch     " Don't slow me down with matching stuff
+set showmode        " What mode am in in? Insert, Visual, etc.
+set dir=/tmp        " swap files here, and other tmp stuff
+set shm=atoOsTWAI   " Don't bother me with VIM messages
+set noshowcmd       " Again less chatter
 
-""""""""""""""""
-" Unicode support
-"
-""""""""""""""""
-" accents.vim
-"set keymap=accents
+"""""""""""""""""""""""
+" Clipboard management
+"""""""""""""""""""""""
+if has('xterm_clipboard')
+  set clipboard=unnamedplus
+endif
 
-""""""""""""""""
-" F key mapping
-"
-""""""""""""""""
+"""""""""""""""""""""""""""""""""
+" Buffer management key mapping
+"""""""""""""""""""""""""""""""""
 
-"  Close the current buffer
-map <F5> c
+"  Move cursor to window above
+map <C-K> <C-W>k
 
-"  Move to previous buffer in list
-map <F1> W
-
-"  Move to next buffer in list
-map <F2> 
+"  Move cursor to window above
+"     have to remove bashes ctrl-j
+let g:BASH_Ctrl_j   = 'off'
+map <C-J> <C-W>j
 
 "  Split current buffer horizontally
-map <F3> s
+map <C-N> <C-W>s
 
-"  Split current buffer vertically
-map <F4> v
+"""""""""""""""""""""""""""""""""
+" bufexplorer plugin preferences
+"
+"""""""""""""""""""""""""""""""""
+map :f \be
 
-"  Grow current buffer by 1 line
-map + +
-
-"  Shrink current buffer by 1 line
-map - -
-
+let g:bufExplorerDetailedHelp=0
+let g:bufExplorerSortBy='name'       " Sort by the buffer's name.
+let g:bufExplorerSplitBelow=1        " Split new window below current.
+let g:bufExplorerSplitOutPathName=0 " Don't split the path and file
 
 """""""""""""""""""""""""""
 " Cursor Maneuvering Shortcuts
@@ -63,7 +60,6 @@ map F 
 
 " Scroll up by 1 buffer length
 map B 
-
 
 """""""""""""""""""""""""""
 " Filetype stuff
@@ -88,44 +84,25 @@ syntax on
 let loaded_matchparen = 1
 "
 hi Visual ctermfg=white  ctermbg=blue  cterm=NONE
-"highlight Comment term=bold ctermfg=cyan
-"highlight Function term=bold ctermfg=green
-"highlight SpecialChar term=bold ctermfg=green
-"highlight Include   ctermfg=green
-"highlight Structure   ctermfg=green
-"highlight Operator   ctermfg=white
-"highlight PreProc   ctermfg=green
-"highlight Title   ctermfg=white
-"highlight Type ctermfg=white
-"highlight Statement ctermfg=green
-"highlight Constant ctermfg=yellow
-"highlight Special ctermfg=white
-"highlight Directory ctermfg=white
-"highlight StatusLine ctermfg=yellow ctermbg=black
-"highlight StatusLineNC ctermfg=white ctermbg=black
 
 """""""""""""""""""""""""""
-" Colors
+" Solarized Colors
 "
+" Unfortunately this doesn't work too well
+" for console vim
 """""""""""""""""""""""""""
 
-set t_Co=16
 syntax enable
-"set background=dark
-"colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
+" Keep Visual selection visible
 
 """""""""""""""""""""""""""""""""
-" bufexplorer plugin preferences
-"
+" lvimrc: Per directory vimrc
 """""""""""""""""""""""""""""""""
 
-map :f \be
-"
-let g:bufExplorerDetailedHelp=0
-let g:bufExplorerSortBy='name'       " Sort by the buffer's name.
-let g:bufExplorerSplitBelow=1        " Split new window below current.
-let g:bufExplorerSplitOutPathName=0 " Don't split the path and file
-
-" lvimrc
 let g:localvimrc_ask=0
+
+" Pandoc
+let g:pandoc#modules#disabled = ["folding"]
